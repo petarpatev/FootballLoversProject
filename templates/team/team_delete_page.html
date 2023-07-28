@@ -1,0 +1,9 @@
+<h1>Delete Team</h1>
+<form method="post" action="{% url 'delete team' pk=team.pk %}">
+
+    <p>Are you sure you want to delete the team ?</p>
+    <button>Yes</button>
+
+    {% csrf_token %}
+
+</form>

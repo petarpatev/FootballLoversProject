@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block page_content %}
+    <h1>Profile Details</h1>
+
+    {% if footballer %}
+        <div>
+            <a href="{% url 'details footballer' pk=footballer.pk %}">Footballer Details</a>
+        </div>
+    {% endif %}
+
+    {% if stadium %}
+        <div>
+            <a href="{% url 'details stadium' pk=stadium.pk %}">Stadium Details</a>
+        </div>
+    {% endif %}
+
+    {% if team %}
+        <div>
+            <a href="{% url 'details team' pk=team.pk %}">Team Details</a>
+        </div>
+    {% endif %}
+
+    <p>{{ object.username }}</p>
+    <a href="{% url 'profile edit' pk=object.pk %}">Edit</a>
+    <a href="{% url 'profile delete' pk=object.pk %}">Delete</a>
+{% endblock %}

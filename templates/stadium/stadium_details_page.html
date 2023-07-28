@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block page_content %}
+    <h1>Stadium Details</h1>
+    {{ object.name }}
+    {{ object.country }}
+    {{ object.capacity }}
+    <div>
+        <a href="{% url 'update stadium' pk=stadium.pk %}">Edit</a>
+        <a href="{% url 'delete stadium' pk=stadium.pk %}">Delete</a>
+    </div>
+{% endblock %}
