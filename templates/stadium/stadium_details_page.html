@@ -4,6 +4,7 @@
     {{ object.name }}
     {{ object.country }}
     {{ object.capacity }}
+    <img src="{{ object.image_url }}" alt="img8">
     <div>
         <a href="{% url 'update stadium' pk=stadium.pk %}">Edit</a>
         <a href="{% url 'delete stadium' pk=stadium.pk %}">Delete</a>

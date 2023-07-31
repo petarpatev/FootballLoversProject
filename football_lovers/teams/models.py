@@ -29,6 +29,11 @@ class Team(models.Model):
         ),
     )
 
+    image_url = models.URLField(
+        null=True,
+        blank=True,
+    )
+
     user = models.ForeignKey(
         UserModel,
         on_delete=models.CASCADE,

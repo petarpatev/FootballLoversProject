@@ -10,7 +10,7 @@ from football_lovers.teams.models import Team
 class TeamCreateView(views.CreateView):
     template_name = 'team/team_add_page.html'
     model = Team
-    fields = ('name', 'country',)
+    fields = ('name', 'country', 'image_url',)
     success_url = reverse_lazy('home page')
 
     def form_valid(self, form):

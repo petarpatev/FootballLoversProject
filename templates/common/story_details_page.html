@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block page_content %}
+    <h1>Story Details</h1>
+    {{ object.title }}
+    {{ object.content }}
+    <div>
+        <a href="{% url 'update story' pk=story.pk %}">Edit</a>
+        <a href="{% url 'delete story' pk=story.pk %}">Delete</a>
+    </div>
+{% endblock %}

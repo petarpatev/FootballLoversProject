@@ -13,4 +13,4 @@ class RegisterUserForm(auth_forms.UserCreationForm):
 class EditUserForm(forms.ModelForm):
     class Meta:
         model = UserModel
-        fields = ('username', 'first_name', 'last_name',)
+        fields = ('username', 'first_name', 'last_name', 'email', 'gender', 'profile_picture',)

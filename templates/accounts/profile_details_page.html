@@ -21,6 +21,13 @@
     {% endif %}
 
     <p>{{ object.username }}</p>
-    <a href="{% url 'profile edit' pk=object.pk %}">Edit</a>
-    <a href="{% url 'profile delete' pk=object.pk %}">Delete</a>
+    <p>{{ object.first_name }}</p>
+    <p>{{ object.last_name }}</p>
+    <p>{{ object.gender }}</p>
+    <p>{{ object.email }}</p>
+    <img src="{{ object.profile_picture }}" alt="img8">
+    {% if is_owner %}
+        <a href="{% url 'profile edit' pk=object.pk %}">Edit</a>
+        <a href="{% url 'profile delete' pk=object.pk %}">Delete</a>
+    {% endif %}
 {% endblock %}

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block page_content %}
-    <h2>Update player</h2>
-    <form method="post" action="{% url 'update footballer' pk=footballer.pk %}">
+    <h2>Update Story</h2>
+    <form method="post" action="{% url 'update story' pk=story.pk %}">
         {{ form.as_p }}
         {% csrf_token %}
         <button>Update</button>

@@ -24,7 +24,7 @@ class LoginUserView(auth_views.LoginView):
 
 
 class LogoutUserView(auth_views.LogoutView):
-    pass
+    next_page = reverse_lazy('home page')
 
 
 class DetailsUserView(views.DetailView):
@@ -34,6 +34,7 @@ class DetailsUserView(views.DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
+        context['is_owner'] = self.object == self.request.user
         context['footballer'] = self.object.footballer_set.first()
         context['stadium'] = self.object.stadium_set.first()
         context['team'] = self.object.team_set.first()

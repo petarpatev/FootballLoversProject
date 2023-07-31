@@ -1,0 +1,9 @@
+<h1>Delete Story</h1>
+<form method="post" action="{% url 'delete story' pk=story.pk %}">
+
+    <p>Are you sure you want to delete the story ?</p>
+    <button>Yes</button>
+
+    {% csrf_token %}
+
+</form>

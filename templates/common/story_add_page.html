@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block page_content %}
-    <h1>Add your favourite team</h1>
-    <form method="post" action="{% url 'create team' %}">
+    <h1>Add Story</h1>
+    <form method="post" action="{% url 'create story' %}">
 
     {{ form.as_p }}
     {% csrf_token %}

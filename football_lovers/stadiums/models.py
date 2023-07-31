@@ -34,6 +34,11 @@ class Stadium(models.Model):
         blank=True,
     )
 
+    image_url = models.URLField(
+        null=True,
+        blank=True,
+    )
+
     user = models.ForeignKey(
         UserModel,
         on_delete=models.CASCADE,

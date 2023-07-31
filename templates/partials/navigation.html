@@ -16,36 +16,35 @@
             <ul class="nav-group">
                 <li class="nav-item">
 
-                    <a href="{% url 'create team' %}">
-                        <i>Add Team</i>
+                    <a href="">
+                        <i>About Us</i>
                     </a>
                 </li>
                 <li class="nav-item">
 
-                    <a href="{% url 'create footballer' %}">
-                        <i>Add Footballer</i>
+                    <a href="{% url 'create story' %}">
+                        <i>Add Story</i>
                     </a>
                 </li>
-                <li class="nav-item">
-
-                    <a href="{% url 'create stadium' %}">
-                        <i>Add Stadium</i>
-                    </a>
-                </li>
-                {% if not request.user.is_authenticated %}
+                {% if request.user.is_authenticated %}
                     <li class="nav-item">
 
-                        <a href="{% url 'login' %}">
-                            <i>Login</i>
+                        <a href="{% url 'create team' %}">
+                            <i>Add Team</i>
                         </a>
                     </li>
                     <li class="nav-item">
 
-                        <a href="{% url 'register' %}">
-                            <i>Register</i>
+                        <a href="{% url 'create footballer' %}">
+                            <i>Add Footballer</i>
                         </a>
                     </li>
-                {% else %}
+                    <li class="nav-item">
+
+                        <a href="{% url 'create stadium' %}">
+                            <i>Add Stadium</i>
+                        </a>
+                    </li>
                     <li class="nav-item">
 
                         <a href="">
@@ -61,6 +60,19 @@
                     <li class="nav-item">
                         <a href="{% url 'profile details' pk=request.user.pk %}">
                             <i>Profile</i>
+                        </a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+
+                        <a href="{% url 'login' %}">
+                            <i>Login</i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+
+                        <a href="{% url 'register' %}">
+                            <i>Register</i>
                         </a>
                     </li>
                 {% endif %}

@@ -3,6 +3,7 @@
     <h1>Team Details</h1>
     {{ object.name }}
     {{ object.country }}
+    <img src="{{ object.image_url }}" alt="img8">
     <div>
         <a href="{% url 'update team' pk=team.pk %}">Edit</a>
         <a href="{% url 'delete team' pk=team.pk %}">Delete</a>
