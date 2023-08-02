@@ -11,7 +11,7 @@ UserModel = get_user_model()
 class RegisterUserView(views.CreateView):
     template_name = 'accounts/register.html'
     form_class = RegisterUserForm
-    success_url = reverse_lazy('register')
+    success_url = reverse_lazy('home page')
 
     def form_valid(self, form):
         user = super().form_valid(form)
@@ -38,6 +38,7 @@ class DetailsUserView(views.DetailView):
         context['footballer'] = self.object.footballer_set.first()
         context['stadium'] = self.object.stadium_set.first()
         context['team'] = self.object.team_set.first()
+        context['stories'] = self.object.story_set.all()
 
         return context
 

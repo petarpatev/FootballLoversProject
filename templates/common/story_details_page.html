@@ -3,8 +3,10 @@
     <h1>Story Details</h1>
     {{ object.title }}
     {{ object.content }}
-    <div>
-        <a href="{% url 'update story' pk=story.pk %}">Edit</a>
-        <a href="{% url 'delete story' pk=story.pk %}">Delete</a>
-    </div>
+    {% if request.user.is_authenticated and request.user.id == object.user_id %}
+        <div>
+            <a href="{% url 'update story' pk=object.pk %}">Edit</a>
+            <a href="{% url 'delete story' pk=object.pk %}">Delete</a>
+        </div>
+    {% endif %}
 {% endblock %}

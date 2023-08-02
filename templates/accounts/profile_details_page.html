@@ -25,6 +25,11 @@
     <p>{{ object.last_name }}</p>
     <p>{{ object.gender }}</p>
     <p>{{ object.email }}</p>
+    <ul>
+    {% for story in stories %}
+        <li>{{ story.title }}</li>
+    {% endfor %}
+    </ul>
     <img src="{{ object.profile_picture }}" alt="img8">
     {% if is_owner %}
         <a href="{% url 'profile edit' pk=object.pk %}">Edit</a>

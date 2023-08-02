@@ -20,13 +20,14 @@
                         <i>About Us</i>
                     </a>
                 </li>
-                <li class="nav-item">
+
+                {% if request.user.is_authenticated %}
+                    <li class="nav-item">
 
                     <a href="{% url 'create story' %}">
                         <i>Add Story</i>
                     </a>
                 </li>
-                {% if request.user.is_authenticated %}
                     <li class="nav-item">
 
                         <a href="{% url 'create team' %}">

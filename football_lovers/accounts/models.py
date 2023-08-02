@@ -29,8 +29,8 @@ class CustomUser(auth_models.AbstractUser):
     )
 
     first_name = models.CharField(
-        null=False,
-        blank=False,
+        null=True,
+        blank=True,
         max_length=NAME_MAX_LENGTH,
         validators=(
             MinLengthValidator(NAME_MIN_LENGTH),
@@ -39,8 +39,8 @@ class CustomUser(auth_models.AbstractUser):
     )
 
     last_name = models.CharField(
-        null=False,
-        blank=False,
+        null=True,
+        blank=True,
         max_length=NAME_MAX_LENGTH,
         validators=(
             MinLengthValidator(NAME_MIN_LENGTH),
@@ -49,6 +49,8 @@ class CustomUser(auth_models.AbstractUser):
     )
 
     gender = models.CharField(
+        null=True,
+        blank=True,
         choices=Gender.choices(),
     )
 

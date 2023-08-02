@@ -5,7 +5,7 @@
 
     {% for story in stories %}
         <li>
-        {{ story.title }}
+        <a href="{% url 'details story' pk=story.pk %}">{{ story.title }}</a>
         </li>
     {% endfor %}
 

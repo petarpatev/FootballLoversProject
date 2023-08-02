@@ -31,6 +31,10 @@ class StoryDetailsView(views.DetailView):
     template_name = 'common/story_details_page.html'
     model = Story
 
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context['owner'] = self.object.user_id == self.request.user.id
+
 
 class StoryUpdateView(views.UpdateView):
     model = Story

@@ -1,4 +1,7 @@
+from django.contrib.auth import get_user_model
 from django.db import models
+
+UserModel = get_user_model()
 
 
 class Story(models.Model):
@@ -12,4 +15,8 @@ class Story(models.Model):
     content = models.TextField(
         null=False,
         blank=False,
+    )
+    user = models.ForeignKey(
+        UserModel,
+        on_delete=models.CASCADE,
     )
