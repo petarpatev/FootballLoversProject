@@ -20,3 +20,13 @@ class Story(models.Model):
         UserModel,
         on_delete=models.CASCADE,
     )
+
+
+class Like(models.Model):
+    to_story = models.ForeignKey(
+        Story, on_delete=models.CASCADE
+    )
+    user = models.ForeignKey(
+        UserModel,
+        on_delete=models.CASCADE
+    )

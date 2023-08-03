@@ -3,6 +3,7 @@
     <h1>Story Details</h1>
     {{ object.title }}
     {{ object.content }}
+    {{ object.like_set.count }}
     {% if request.user.is_authenticated and request.user.id == object.user_id %}
         <div>
             <a href="{% url 'update story' pk=object.pk %}">Edit</a>

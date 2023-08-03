@@ -19,6 +19,16 @@
             <a href="{% url 'details team' pk=team.pk %}">Team Details</a>
         </div>
     {% endif %}
+    <h2>My stories</h2>
+    {% if stories %}
+        <ul>
+            {% for story in stories %}
+                <li>
+                    {{ story.title }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
 
     <p>{{ object.username }}</p>
     <p>{{ object.first_name }}</p>
@@ -26,9 +36,9 @@
     <p>{{ object.gender }}</p>
     <p>{{ object.email }}</p>
     <ul>
-    {% for story in stories %}
-        <li>{{ story.title }}</li>
-    {% endfor %}
+        {% for story in stories %}
+            <li>{{ story.title }}</li>
+        {% endfor %}
     </ul>
     <img src="{{ object.profile_picture }}" alt="img8">
     {% if is_owner %}
